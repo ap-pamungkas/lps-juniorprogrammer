@@ -43,6 +43,6 @@
 
 <!-- Tambahkan jQuery dan contact.js -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="assets/js/contact.js"></script>
+<script src="ajax/contact.js"></script>
 
 <?php include 'includes/footer.php'; ?>
