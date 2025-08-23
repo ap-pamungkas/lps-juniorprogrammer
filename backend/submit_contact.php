@@ -1,12 +1,7 @@
 <?php
 
-
-// Muat koneksi database dan PHPMailer
+// Muat koneksi database
 require_once '../db/connection.php';
-require_once '../vendor/autoload.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 // Fungsi untuk membersihkan input
 function sanitizeInput(string $data): string {
@@ -54,50 +49,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->execute()) {
                 $response['success'] = true;
                 $response['message'] = 'Pesan berhasil dikirim!';
-
-                // Kirim notifikasi email ke admin menggunakan PHPMailer
-                $mail = new PHPMailer(true);
-                try {
-                    // Konfigurasi SMTP
-                    $mail->isSMTP();
-                    $mail->Host = $_ENV['SMTP_HOST'];
-                    $mail->SMTPAuth = true;
-                    $mail->Username = $_ENV['SMTP_USER'];
-                    $mail->Password = $_ENV['SMTP_PASS'];
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                    $mail->Port = $_ENV['SMTP_PORT'];
-
-                    // Pengaturan email
-                    $mail->setFrom($_ENV['SMTP_FROM'], $_ENV['SMTP_FROM_NAME']);
-                    $mail->addAddress('agustinusputra94@gmail.com', 'Admin SMA Harapan Bangsa');
-                    $mail->addReplyTo($email, $nama); // Balasan ke email pengirim
-
-                    // Konten email
-                    $mail->isHTML(true);
-                    $mail->Subject = 'Pesan Kontak Baru dari Website';
-                    $mail->Body = "
-                        <h3>Pesan Kontak Baru</h3>
-                        <p><strong>Nama:</strong> {$nama}</p>
-                        <p><strong>Email:</strong> {$email}</p>
-                        <p><strong>Pesan:</strong><br>" . nl2br($pesan) . "</p>
-                        <p><small>Dikirim pada: " . date('Y-m-d H:i:s') . "</small></p>
-                    ";
-                    $mail->AltBody = "Pesan Kontak Baru\nNama: {$nama}\nEmail: {$email}\nPesan: {$pesan}\nDikirim pada: " . date('Y-m-d H:i:s');
-
-                    // Kirim email
-                    $mail->send();
-                } catch (Exception $e) {
-                    // Log error email, tapi tidak gagalakan response ke pengguna
-                    error_log("Gagal mengirim email: {$mail->ErrorInfo}");
-                }
             } else {
                 $response['message'] = 'Gagal menyimpan pesan ke database.';
             }
 
             $stmt->close();
         } catch (Exception $e) {
+
+
+
+            $response['message'] = 'Terjadi kesalahan: ' . $e->getMessage();
+
             error_log($e->getMessage());
-            $response['message'] = 'Terjadi kesalahan saat menyimpan pesan.';
         }
     } else {
         $response['message'] = implode('<br>', $errors);
@@ -115,7 +78,10 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
     echo json_encode($response);
     exit;
 }
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
