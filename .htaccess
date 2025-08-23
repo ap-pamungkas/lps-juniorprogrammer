@@ -1,0 +1,22 @@
+Options -Indexes
+
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<FilesMatch "^\\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+RewriteEngine On
+RewriteBase /
+
+# Blokir akses langsung ke file .env
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule \.env$ - [F,L]
+
+# Redirect semua request ke file yang dimulai dengan titik ke 404
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^\. - [R=404,L]

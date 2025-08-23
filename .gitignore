@@ -1,0 +1,5 @@
+# Ignore package files and folders
+vendor/
+node_modules/
+.env
+
