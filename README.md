@@ -56,7 +56,7 @@ Melalui proyek ini, peserta diharapkan dapat:
   - **Laragon** - Development environment (Windows)
       - Apache 2.4 - Web server
       - MySQL 8.0 - Database server
-      - PHP 8.x - PHP interpreter
+      - PHP 8.2.^ - PHP interpreter
 
 ## ⚙️ Langkah-langkah Penggunaan
 
