@@ -10,6 +10,7 @@ Proyek ini merupakan implementasi website informasi sekolah yang menunjukkan pen
 - Desain responsif dengan HTML, CSS, dan JavaScript
 - Keamanan web dasar
 - Manajemen proyek dengan Composer
+- Implementasi sistem email dengan PHPMailer
 
 ## 🎯 Tujuan Pembelajaran
 
@@ -19,6 +20,7 @@ Melalui proyek ini, peserta diharapkan dapat:
 - Mengintegrasikan database untuk menyimpan data kontak
 - Menerapkan keamanan dasar website
 - Menggunakan tools modern seperti Composer untuk dependency management
+- Mengimplementasikan sistem notifikasi email
 
 ## 🚀 Fitur Utama
 
@@ -26,7 +28,7 @@ Melalui proyek ini, peserta diharapkan dapat:
 - **Tentang Kami**: Profil lengkap SMAN XYX
 - **Kegiatan**: Daftar kegiatan sekolah
 - **Berita**: Artikel berita terbaru
-- **Kontak**: Formulir kontak dengan database backend
+- **Kontak**: Formulir kontak dengan database backend dan notifikasi email
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -34,6 +36,7 @@ Melalui proyek ini, peserta diharapkan dapat:
 - **PHP 8.x** - Bahasa pemrograman utama
 - **MySQL** - Database relasional
 - **Phinx** - Database migrations (via Composer)
+- **PHPMailer** - Library untuk mengirim email
 
 ### Frontend
 - **HTML5** - Struktur konten
@@ -44,5 +47,6 @@ Melalui proyek ini, peserta diharapkan dapat:
 - **Composer** - Dependency management
 - **Git** - Version control
 - **Laragon** - Development environment (Windows)
-
-## 📁 Struktur Proyek
+  - Apache 2.4 - Web server
+  - MySQL 8.0 - Database server
+  - PHP 8.x - PHP interpreter
