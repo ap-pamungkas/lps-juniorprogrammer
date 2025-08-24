@@ -27,7 +27,7 @@ Melalui proyek ini, peserta diharapkan dapat:
 ## 🚀 Fitur Utama
 
   - **Beranda**: Menampilkan informasi utama sekolah
-  - **Tentang Kami**: Profil lengkap SMAN XYX
+  - **Tentang Kami**: Profil lengkap sekolah
   - **Kegiatan**: Daftar kegiatan sekolah
   - **Berita**: Artikel berita terbaru
   - **Kontak**: Formulir kontak dengan database backend dan notifikasi email
@@ -40,6 +40,7 @@ Melalui proyek ini, peserta diharapkan dapat:
   - **MySQL** - Database relasional
   - **Phinx** - Database migrations (via Composer)
   - **PHPMailer** - Library untuk mengirim email
+  - **PHP dotenv** - Untuk manajemen variabel lingkungan
 
 ### Frontend
 
