@@ -58,8 +58,8 @@ $mail->isSMTP();
  
 $mail->Host       = $_ENV['EMAIL_HOST'];
 $mail->SMTPAuth   = true;
-$mail->Username   = $_ENV['EMAIL_USER']; // ganti dengan email kamu
-$mail->Password   = $_ENV['EMAIL_PASS']; // ganti dengan app password dari Google
+$mail->Username   = $_ENV['EMAIL_USER'];
+$mail->Password   = $_ENV['EMAIL_PASS'];
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port       = $_ENV['SMTP_PORT'];
 
@@ -77,9 +77,7 @@ $mail->Body    = "
     <p><b>Email:</b> $email</p>
     <p><b>Pesan:</b><br>$pesan</p>
 ";
-
                     $mail->send();
-
                     $response['success'] = true;
                     $response['message'] = 'Pesan berhasil dikirim dan email terkirim!';
                 } catch (Exception $e) {

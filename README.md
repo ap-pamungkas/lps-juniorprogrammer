@@ -66,7 +66,7 @@ Berikut adalah cara untuk menjalankan proyek ini di lingkungan lokal Anda.
 Clone repositori dari GitHub atau unduh file ZIP dan ekstrak ke direktori lokal Anda.
 
 ```bash
-git clone [URL_REPOSITORY_ANDA]
+git clone [https://github.com/ap-pamungkas/lps-juniorprogrammer.git]
 ```
 
 ### 2\. Instalasi Dependensi
