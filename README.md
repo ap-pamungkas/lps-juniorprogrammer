@@ -36,7 +36,7 @@ Melalui proyek ini, peserta diharapkan dapat:
 
 ### Backend
 
-  - **PHP 8.x** - Bahasa pemrograman utama
+  - **PHP 8.2.^** - Bahasa pemrograman utama
   - **MySQL** - Database relasional
   - **Phinx** - Database migrations (via Composer)
   - **PHPMailer** - Library untuk mengirim email
