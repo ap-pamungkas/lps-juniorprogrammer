@@ -64,13 +64,13 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port       = $_ENV['SMTP_PORT'];
 
 // Pengirim & penerima
-$mail->setFrom($_ENV['EMAIL_USER'], 'Website Kontak');
+$mail->setFrom($_ENV['EMAIL_USER'], 'SMAN HARAPAN BANGSA');
 $mail->addAddress($_ENV['EMAIL_ADMIN'], 'Admin'); 
 $mail->addReplyTo($email, $nama);
 
 // Isi email
 $mail->isHTML(true);
-$mail->Subject = 'Pesan Baru dari Form Kontak';
+$mail->Subject = 'Pesan Baru dari SMAN HARAPAN BANGSA';
 $mail->Body    = "
     <h3>Pesan Baru dari Website</h3>
     <p><b>Nama:</b> $nama</p>
@@ -83,8 +83,7 @@ $mail->Body    = "
                 } catch (Exception $e) {
                     $response['success'] = false;
                     $response['message'] = "Pesan tersimpan, tetapi email gagal dikirim. Error: {$mail->ErrorInfo}";
-                     $mail->SMTPDebug = 2; 
-                    $mail->Debugoutput = 'html';
+                    
                 }
             } else {
                 $response['message'] = 'Gagal menyimpan pesan ke database.';

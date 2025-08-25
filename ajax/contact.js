@@ -1,9 +1,7 @@
-
 $(document).ready(function() {
     // Validasi form saat submit
     $('.contact-form').on('submit', function(e) {
         e.preventDefault(); // Mencegah submit default
-
         // Reset pesan error
         $('.form-error').remove();
         let isValid = true;
@@ -34,13 +32,11 @@ $(document).ready(function() {
             $('#email').after('<div class="form-error text-danger">Email maksimal 100 karakter.</div>');
             isValid = false;
         }
-
         // Validasi pesan
         if (!pesan) {
             $('#pesan').after('<div class="form-error text-danger">Pesan wajib diisi.</div>');
             isValid = false;
         }
-
         // Jika validasi lolos, kirim data via AJAX
         if (isValid) {
             $.ajax({
